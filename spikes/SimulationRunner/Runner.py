@@ -8,7 +8,7 @@ app = Celery('tasks', backend='rpc://', broker='amqp://rabbituser:password@mynix
 def run(x):
     random_gen = random.Random()
     print "Stating simulation run"
-    random_sleep_time = random_gen.randint(100, 1000)
+    random_sleep_time = random_gen.randint(1, 50)
     print "Sleeping for ", random_sleep_time, " seconds"
     time.sleep(random_sleep_time)
     print "Done sleeping"

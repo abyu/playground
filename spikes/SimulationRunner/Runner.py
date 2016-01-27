@@ -1,7 +1,7 @@
 import random
 import time
 from celery import Celery
-app = Celery('tasks', backend='rpc://', broker='amqp://rabbituser:password@mynix.cloudapp.net//')
+app = Celery('tasks', backend='db+postgresql://kishorek:password@centnix.eastus.cloudapp.azure.com/celery-tasks', broker='amqp://rabbituser:password@mynix.cloudapp.net//')
 
 
 @app.task
